@@ -7,7 +7,7 @@ Program use cvs file to send message.
 
 If you need a form, download it here. The form is a xlsx format. If you save the file, you must save as cvs format.
 
-    place for link
+    https://github.com/Rideek9/hackaton2/blob/main/task_01_message_generator/form.xlsx
 
     
 ## Sings
