@@ -3,13 +3,10 @@ import traceback
 import message as msg
 
 
-def take_a_file():
-    name_file = input("Take me a file name\n---> ")
-    file = f'{name_file}.csv'
-    return file
-
-
-def open_file(file):
+def open_file():
+    """This function checks is a file exist is file exist function return list with file element, when file is not exist function return error """
+        name_file = input("Take me a file name\n---> ")
+        file = f'{name_file}.csv'
         try:
             with open(file) as my_file:
                 line = my_file.readlines()
@@ -24,8 +21,9 @@ def open_file(file):
 
 
 def verification_list():
+    """This function verification list with file element and create new list with no header """
     while True:
-        student = open_file(take_a_file())
+        student = open_file()
         if student == 0:
             continue
         else:
@@ -34,6 +32,7 @@ def verification_list():
 
 
 def create_list_student(students):
+    """This function convert file list with student on list in list"""
     student_list = []
     for student in students:
         element = student.rstrip('\n').split(';')
@@ -42,6 +41,7 @@ def create_list_student(students):
 
 
 def missing_data(student_list):
+    """This function verification is all raw is  complete, when only one row is empty function return missing_data list with all index wher user must complete data. Function create new file 'missing_data.csv' with all empty row"""
     missing_data = []
     for index, student in enumerate(student_list):
         try:
@@ -64,6 +64,7 @@ def missing_data(student_list):
 
 
 def send_message(missing,student_list):
+    """When all row is complete this function send a message to all student """
     if missing == 0:
         for student in student_list:
             print('*'*100)
