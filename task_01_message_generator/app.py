@@ -4,7 +4,7 @@ import message as msg
 
 
 def open_file():
-    """This function checks is a file exist is file exist function return list with file element, when file is not exist function return error """
+        """This function checks is a file exist is file exist function return list with file element, when file is not exist function return error """
         name_file = input("Take me a file name\n---> ")
         file = f'{name_file}.csv'
         try:
